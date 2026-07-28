@@ -9,7 +9,7 @@ use std::process::Command;
 pub fn input(prompt: &str) -> String {
   print!("{prompt}");
   io::stdout().flush().unwrap();
-  let mut x = String::new();
+  let mut x: String = String::new();
   io::stdin().read_line(&mut x).unwrap();
   x.trim().to_string()
 }
@@ -30,4 +30,14 @@ pub fn clear_win() -> () {
 #[allow(dead_code)]
 pub fn index<T: PartialEq>(val: T, names: &[T]) -> usize {
   names.iter().position(|x| x == &val).unwrap()
+}
+
+#[allow(dead_code)]
+pub fn show_vec<T: Display>(v: &[T], inter: String) -> String {
+  let mut out: String = String::new();
+  for item in v {
+    out += &item.to_string();
+    out += &inter;
+  }
+  out
 }
