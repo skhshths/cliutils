@@ -24,10 +24,10 @@ pub fn clear_win() -> () {
   Command::new("cmd")
     .args(["/C", "cls"])
     .status()
-    .unwrap();  
+    .unwrap();
 }
 
 #[allow(dead_code)]
 pub fn get_index<T: PartialEq>(val: &T, names: &[T]) -> usize {
   names.iter().position(|x| x == val).unwrap()
-}
+} 
