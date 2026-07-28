@@ -1,6 +1,6 @@
 [package]
 name = "cliutils"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2024"
 description = "Utility functions for building Rust CLI applications."
 license = "MIT"
