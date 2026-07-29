@@ -37,7 +37,7 @@ pub fn index<T: PartialEq>(val: T, names: &[T]) -> usize {
 }
 
 #[allow(dead_code)]
-pub fn show_vec<T: Display>(v: &[T], inter: &str) -> String {
+pub fn vec_to_string<T: Display>(v: &[T], inter: &str) -> String {
   let mut out: String = String::new();
   for item in v {
     out += &item.to_string();
@@ -47,7 +47,7 @@ pub fn show_vec<T: Display>(v: &[T], inter: &str) -> String {
 }
 
 #[allow(dead_code)]
-pub fn show_hash<T: Display, V: Display>(h: &HashMap<T, V>, inter: &str) -> Vec<String> {
+pub fn hash_to_string<T: Display, V: Display>(h: &HashMap<T, V>, inter: &str) -> Vec<String> {
   let mut out: Vec<String> = Vec::new();
   for item in h {
     let mut new: String = String::new();
@@ -57,4 +57,9 @@ pub fn show_hash<T: Display, V: Display>(h: &HashMap<T, V>, inter: &str) -> Vec<
     out.push(new);
   }
   out
+}
+
+#[allow(dead_code)]
+pub fn clean_split<'a>(original: &'a str, split_at: &'a str) -> Vec<&'a str> {
+  original.split(split_at).collect::<Vec<&str>>()
 }
