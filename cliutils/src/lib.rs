@@ -71,7 +71,6 @@ pub fn string_to_vec(original: &str) -> Vec<&str> {
 
 #[allow(dead_code)]
 pub fn strip_all<'a>(original: &'a str, target: &'a str) -> &'a str {
-  let c: Vec<&str> = string_to_vec(original);
   let mut out: &str = original;
   let mut done_something: bool = false;
   if original.starts_with(target) {
