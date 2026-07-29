@@ -1,8 +1,6 @@
 use std::io;
 use std::io::Write;
 
-use std::collections::HashMap
-
 use std::fmt::Display;
 
 use std::cmp::PartialEq;
