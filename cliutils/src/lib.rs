@@ -63,3 +63,8 @@ pub fn hash_to_string<T: Display, V: Display>(h: &HashMap<T, V>, inter: &str) ->
 pub fn clean_split<'a>(original: &'a str, split_at: &'a str) -> Vec<&'a str> {
   original.split(split_at).collect::<Vec<&str>>()
 }
+
+#[allow(dead_code)]
+pub fn strip_all<'a>(original: &'a str, target: &'a str) -> &'a str {
+  original.strip_prefix(target).unwrap().strip_suffix(target).unwrap()
+}
